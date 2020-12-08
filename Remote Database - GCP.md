@@ -7,7 +7,7 @@
 bind-address = 0.0.0.0
 ````
 
-`$ systemctl reload apache2`
+`$ service mysql restart`
 `$mysql -u root -p`
 
 ```
