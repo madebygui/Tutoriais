@@ -76,8 +76,8 @@ $ sudo a2enmod rewrite
 ```
 
 `$ a2dissite 000-default.conf`  
-`$ a2ensite example.com.conf`  
-`$ a2enmod rewrite`
+`$ a2ensite example.com.conf`
+`$ a2enmod rewrite` 
 `$ systemctl reload apache2`
 
 ### Step 5: Prep Database and PHP
