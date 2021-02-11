@@ -1,2 +1,5 @@
 # Instalando Certificado SSL
 https://certbot.eff.org/lets-encrypt/ubuntubionic-apache
+
+# Se já existe o certificado na máquina, para adicionar domínio só rodar
+sudo certbot --apache
