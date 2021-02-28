@@ -56,11 +56,13 @@ $ sudo a2enmod rewrite
 -Go to your web domain registrar and create A record pointing to your new server  
 **Configure Apache conf for website**
 
-`$ cd /var/www` *- Diretório do site*
+```
+$ cd /var/www` *- Diretório do site*
+$ cd /etc/apache2/sites-available
+$ cp 000-default.conf example.com.conf
+$ nano example.com.conf
+```
 
-`$ cd /etc/apache2/sites-available`
-`$ cp 000-default.conf example.com.conf`
-`$ nano example.com.conf`
 ```
 <Directory /var/www/example.com>  
         Require all granted
@@ -75,10 +77,13 @@ $ sudo a2enmod rewrite
 
 ```
 
-`$ a2dissite 000-default.conf`  
-`$ a2ensite example.com.conf`
-`$ a2enmod rewrite` 
-`$ systemctl reload apache2`
+
+```
+$ a2dissite 000-default.conf
+$ a2ensite example.com.conf
+$ a2enmod rewrite
+$ systemctl reload apache2
+```
 
 ### Step 5: Prep Database and PHP
 
