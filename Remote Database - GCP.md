@@ -7,11 +7,14 @@
 bind-address = 0.0.0.0
 ````
 
-`$ service mysql restart`
-`$mysql -u root -p`
+````
+$ service mysql restart
+$mysql -u root -p
+````
 
 ```
 mysql> USE database;
+mysql> SET GLOBAL validate_password_policy=LOW;
 mysql> CREATE user 'usuario'@'%' IDENTIFIED BY 'password';
 mysql> GRANT ALL PRIVILEGES ON *.* to 'nazca_oktus'@'%' WITH GRANT OPTION;
 ```
