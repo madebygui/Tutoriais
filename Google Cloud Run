@@ -1,0 +1,6 @@
+Adicionar os arquivos cloudbuild.yaml, Dockerfile e docker/000-default.conf na raíz do projeto
+
+Registrar um container caso não tenha
+Abrir Cloud Run e criar um serviço
+Entrar no serviço criado e clicar em EDITAR IMPLANTAÇÃO CONTÍNUA
+Adicionar variáveis para serem substituídas no ENV
