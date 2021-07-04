@@ -1,14 +1,26 @@
 version: "3" ## especifica a versão do docker-compose file
 
 services: ## Define um serviço
-    nome_servico: ## nome do serviço
+    development: ## nome do serviço
         build: ## localização do dockerfile
             context: .
-            target: nome_servico
-        container_name: nome_servico
-        command: npm run dev ## comando a executar
+            target: development
+        container_name: development
+        command: yarn dev ## comando a executar
         ports:
             - "3000:3000" ## redirecionamento de porta quando chegar alguma requisição na porta 3000 chama o container na porta 3000
+        volumes:
+            - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app
+        tty: true
+        stdin_open: true ## Libera essa entrada pra rodar os comandos
+    production:
+        build: ## localização do dockerfile
+            context: .
+            target: production
+        container_name: production
+        command: yarn start ## comando a executar
+        ports:
+            - "8080:8080" ## redirecionamento de porta quando chegar alguma requisição na porta 3000 chama o container na porta 3000
         volumes:
             - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app
         tty: true

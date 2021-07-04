@@ -1,6 +1,8 @@
 ## Comando obrigatório
+
+## -> Versáo para produção
 ## Baixa a imagem do node com versão alpine (versão mais simplificada e leve)
-FROM node:alpine
+FROM node:alpine as production
 
 ## Define o local onde o app vai ficar no disco do container
 ## Pode ser o diretório que você quiser
@@ -18,8 +20,17 @@ RUN yarn install
 COPY . .
 
 ## Container ficará ouvindo os acessos na porta 3000
-EXPOSE 3000
+EXPOSE 8080
 
 ## Não se repete no Dockerfile
 ## Executa o comando yarn start para iniciar o script que que está no package.json
+CMD yarn start
+
+## -> Versáo para development
+FROM node:alpine as development
+WORKDIR /usr/app
+COPY package*.json ./
+RUN yarn install
+COPY . .
+EXPOSE 8080
 CMD yarn start
