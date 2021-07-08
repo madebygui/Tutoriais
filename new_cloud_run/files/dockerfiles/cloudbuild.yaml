@@ -36,32 +36,33 @@ steps:
     - name: bash
       args:
           - env
-    - name: gcr.io/cloud-builders/yarn
-      env:
-          - DB_HOST=$_DB_HOST
-          - DB_USERNAME=$_DB_USERNAME
-          - DB_PASSWORD=$_DB_PASSWORD
-          - DB_DATABASE=$_DB_DATABASE
-          - DB_PORT=$_DB_PORT
-      args:
-          - typeorm
-          - "migration:run"
-      id: Typeorm-migration
-      waitFor:
-          - yarn-install
-      entrypoint: yarn
+    # Se o projeto ter migrations descomentar as linhas abaixo e definir as variáveis de ambiente
+    # - name: gcr.io/cloud-builders/yarn
+    #   env:
+    #       - DB_HOST=$_DB_HOST
+    #       - DB_USERNAME=$_DB_USERNAME
+    #       - DB_PASSWORD=$_DB_PASSWORD
+    #       - DB_DATABASE=$_DB_DATABASE
+    #       - DB_PORT=$_DB_PORT
+    #   args:
+    #       - typeorm
+    #       - "migration:run"
+    #   id: Typeorm-migration
+    #   waitFor:
+    #       - yarn-install
+    #   entrypoint: yarn
 images:
     - "$_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA"
 options:
     substitutionOption: ALLOW_LOOSE
 substitutions:
-    _LABELS: gcb-trigger-id=2ef2224b-23fc-4cb0-8bb9-540d5d116797
-    _TRIGGER_ID: 2ef2224b-23fc-4cb0-8bb9-540d5d116797
     _GCR_HOSTNAME: us.gcr.io
     _PLATFORM: managed
-    _SERVICE_NAME: api-up
+    _SERVICE_NAME: nome-servico
     _DEPLOY_REGION: us-central1
+    _LABELS: gcb-trigger-id=87e9e21f-04e3-4c03-950a-3e7fa69c0371
+    _TRIGGER_ID: 87e9e21f-04e3-4c03-950a-3e7fa69c0371
 tags:
     - gcp-cloud-build-deploy-cloud-run
     - gcp-cloud-build-deploy-cloud-run-managed
-    - api-up
+    - nome-servico

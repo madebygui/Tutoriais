@@ -16,8 +16,10 @@
 ### Rodar os seguintes comandos:
 
 `gcloud auth login`<br>
+`gcloud config configurations list` - Listar as configurações<br>
 `gcloud config configurations create nome-qualquer`<br>
-`gcloud config set project nome-projeto`<br>
+`gcloud config set project nome-projeto` - Nome do projeto no GCP<br>
+`gcloud config configurations list` - Listar as configurações depois de criar<br>
 
 ## Arquivos no projeto
 
@@ -42,7 +44,9 @@ Esse comando vai procurar o arquivo docker-compose.yml dentro do diretório e va
 
 ## CI/CD
 
-Para vincular o cloud run ao Github basta clicar em Implantação contínua.
+Para vincular o cloud run ao Github basta clicar em Configurar Implantação Contínua.
+
+Em Build Type selecione Dockerfile
 
 Vá em Cloud Build, clique no serviço criado e edite o gatilho. Edite o arquivo yaml inline conforme o arquivo [cloudbuild.yaml](files/cloudbuild.yaml).
 
