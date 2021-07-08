@@ -15,9 +15,9 @@
 
 ### Rodar os seguintes comandos:
 
-`glcoud auth login`
-`gcloud config configurations create nome-qualquer`
-`gcloud config set project nome-projeto`
+`gcloud auth login`<br>
+`gcloud config configurations create nome-qualquer`<br>
+`gcloud config set project nome-projeto`<br>
 
 ## Arquivos no projeto
 
