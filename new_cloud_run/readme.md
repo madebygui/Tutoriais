@@ -19,7 +19,8 @@
 `gcloud config configurations list` - Listar as configurações<br>
 `gcloud config configurations create nome-qualquer`<br>
 `gcloud config set project nome-projeto` - Nome do projeto no GCP<br>
-`gcloud config configurations list` - Listar as configurações depois de criar<br>
+`gcloud config set project nome-projeto` - Nome do projeto no GCP<br>
+`gcloud config set account email` - Email do usuário da conta GCP com permissões<br>
 
 ## Arquivos no projeto
 
