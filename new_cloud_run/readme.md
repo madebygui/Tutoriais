@@ -1,8 +1,8 @@
 # Subindo uma imagem docker para o Google Cloud Run
 
-> **⚠️ Importante**
-> Instalar o gcloud na máquina local
-> https://cloud.google.com/sdk/docs/install
+> **⚠️ Importante**<br>
+> Instalar o gcloud na máquina local<br>
+> https://cloud.google.com/sdk/docs/install<br>
 
 ## Instalando o gcloud
 
@@ -24,12 +24,19 @@
 
 ## Arquivos no projeto
 
--   [Dockerfile](files/dockerfiles)
--   [docker-compose.yml](files/docker-compose.yml)
--   [start.sh](files/start.sh)
--   [cmd.sh](files/cmd.sh)
--   [deploy.sh](files/deploy.sh)
--   [build.sh](files/build.sh)
+-   [Dockerfile](files/dockerfiles) - Configurações do Docker*
+-   [docker-compose.yml](files/docker-compose.yml) - Configurações do build do docker*
+-   [start.sh](files/start.sh) - Para iniciar o projeto dockerizado
+-   [cmd.sh](files/cmd.sh) - Para abrir o projeto dockerizado no terminal
+-   [deploy.sh](files/deploy.sh) - Para rodar o build no Cloud Run*
+-   [cleanup.sh](files/cleanup.sh) - Para apagar o projeto do Cloud Run
+-   [build.sh](files/build.sh) - Para rodar o build local
+-   [nginx.conf](files/nginx.conf) - Utilizado em projetos React para criar um servidor*
+
+**Arquivos necessários para subir para o Cloud Run*
+
+> **⚠️ Importante**<br>
+> Altere o arquivo deploy.sh adicionando as informações corretas do seu projeto
 
 Transforme os arquivos sh em executáveis:
 
@@ -42,6 +49,8 @@ Basta rodar o arquivo deploy.sh
 `./deploy.sh`
 
 Esse comando vai procurar o arquivo docker-compose.yml dentro do diretório e vai subir o container para o cloud run.
+
+Após concluir esse processo será exibido o link gerado do site/sistema web.
 
 ## CI/CD
 
