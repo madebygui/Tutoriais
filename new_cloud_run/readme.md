@@ -25,7 +25,7 @@
 ## Arquivos no projeto
 
 -   [Dockerfile](files/dockerfiles) - Configurações do Docker*
--   [docker-compose.yml](files/docker-compose.yml) - Configurações do build do docker*
+-   [docker-compose.yml](files/dockerfiles) - Configurações do build do docker*
 -   [start.sh](files/start.sh) - Para iniciar o projeto dockerizado
 -   [cmd.sh](files/cmd.sh) - Para abrir o projeto dockerizado no terminal
 -   [deploy.sh](files/deploy.sh) - Para rodar o build no Cloud Run*
